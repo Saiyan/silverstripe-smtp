@@ -5,7 +5,7 @@ Based on [http://silverstripe.org/smtpmailer-module/](http://silverstripe.org/sm
 ## Description
 **silverstripe-smtp** automatically sends emails (e.g. from UserForms) to your provider's or host's SMTP server instead of using PHP's built-in ``mail()`` function.
 
-**silverstripe-smtp** replaces the classic SilverStripe Mailer (using the ``mail()`` function) with PHPMailer 5.2.1 ([http://code.google.com/a/apache-extras.org/p/phpmailer/](http://code.google.com/a/apache-extras.org/p/phpmailer/), was [http://sourceforge.net/projects/phpmailer/](http://sourceforge.net/projects/phpmailer/)) to send emails via the SMTP protocol to a local or remote SMTP server.
+**silverstripe-smtp** replaces the classic SilverStripe Mailer (using the ``mail()`` function) with PHPMailer 5.2.9 ([https://github.com/PHPMailer/PHPMailer](https://github.com/PHPMailer/PHPMailer)) to send emails via the SMTP protocol to a local or remote SMTP server.
 
 When would you use this module:
 
@@ -19,12 +19,14 @@ When would you use this module:
 
 ## Requirements
 SilverStripe 2.3+
+Composer
 
 
 ## Installation
 1. Extract the ``silverstripe-smtp`` folder into the top level of your site and rename it to ``smtp``
-2. Without any configuration, the module is going to connect to the mail server on localhost without authentication
-3. If you want to fall back to the classic mailer without uninstalling the module: Edit ``smtp/_config.php`` and comment out the ``set_mailer`` statement
+2. install dependencies with ``composer install ``
+3. Without any configuration, the module is going to connect to the mail server on localhost without authentication
+4. If you want to fall back to the classic mailer without uninstalling the module: Edit ``smtp/_config.php`` and comment out the ``set_mailer`` statement
 
 
 ## Configuration

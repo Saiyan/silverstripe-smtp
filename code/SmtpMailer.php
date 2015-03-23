@@ -1,8 +1,7 @@
 <?php
 
 
-require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'class.phpmailer.php');
-
+require_once(dirname(__FILE__) . '/../vendor/autoload.php');
 
 class SmtpMailer extends Mailer {
 	var $mailer = null;
