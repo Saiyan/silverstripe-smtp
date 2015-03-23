@@ -19,12 +19,14 @@ When would you use this module:
 
 ## Requirements
 SilverStripe 2.3+
+Composer
 
 
 ## Installation
 1. Extract the ``silverstripe-smtp`` folder into the top level of your site and rename it to ``smtp``
-2. Without any configuration, the module is going to connect to the mail server on localhost without authentication
-3. If you want to fall back to the classic mailer without uninstalling the module: Edit ``smtp/_config.php`` and comment out the ``set_mailer`` statement
+2. install dependencies with ``composer install ``
+3. Without any configuration, the module is going to connect to the mail server on localhost without authentication
+4. If you want to fall back to the classic mailer without uninstalling the module: Edit ``smtp/_config.php`` and comment out the ``set_mailer`` statement
 
 
 ## Configuration
