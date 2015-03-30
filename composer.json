@@ -4,5 +4,8 @@
     "require": {
         "phpmailer/phpmailer": "5.2.9",
         "composer/installers": "~1.0"
+    },
+    "extra": {
+        "installer-name": "smtp"
     }
 }
