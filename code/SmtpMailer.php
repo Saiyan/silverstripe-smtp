@@ -34,6 +34,9 @@ class SmtpMailer extends Mailer {
 			$this->mailer->SMTPDebug = defined('SMTPMAILER_DEBUG_MESSAGING_LEVEL') ? SMTPMAILER_DEBUG_MESSAGING_LEVEL : 0;
 			$this->mailer->SetLanguage(defined('SMTPMAILER_LANGUAGE_OF_MESSAGES') ? SMTPMAILER_LANGUAGE_OF_MESSAGES : 'en');
 			$this->mailer->ErrorLevel = defined('SMTPMAILER_SMTP_ERROR_LEVEL') ? SMTPMAILER_SMTP_ERROR_LEVEL : E_USER_ERROR;
+            $this->mailer->FromAddressFallback = defined('SMTPMAILER_FROM_ADDRESS_FALLBACK')
+                ? SMTPMAILER_FROM_ADDRESS_FALLBACK
+                : '';
 		}
 	}
 
@@ -65,6 +68,9 @@ class SmtpMailer extends Mailer {
 
 
 	protected function sendMailViaSmtp($to, $from, $subject, $attachedFiles = false, $customheaders = false, $inlineImages = false){
+        if(!$from){
+            $from = SMTPMAILER_FROM_ADDRESS_FALLBACK;
+        }
 		if($this->mailer->SMTPDebug > 0){
 			echo "<em><strong>*** Debug mode is on</strong>, printing debug messages and not redirecting to the website:</em><br/>";
 		}
